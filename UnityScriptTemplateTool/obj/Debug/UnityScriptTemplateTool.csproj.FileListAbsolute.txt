@@ -10,3 +10,14 @@ c:\users\darran\documents\visual studio 2013\Projects\UnityScriptTemplateTool\Un
 C:\Users\Darran\Documents\Visual Studio 2013\Projects\UnityScriptTemplateTool\branches\UnityScriptTemplateTool\bin\Debug\UnityScriptTemplateTool.exe.config
 C:\Users\Darran\Documents\Visual Studio 2013\Projects\UnityScriptTemplateTool\branches\UnityScriptTemplateTool\obj\Debug\UnityScriptTemplateTool.exe
 C:\Users\Darran\Documents\Visual Studio 2013\Projects\UnityScriptTemplateTool\branches\UnityScriptTemplateTool\obj\Debug\UnityScriptTemplateTool.pdb
+C:\Users\Darran\Documents\Visual Studio 2013\Projects\UnityScriptTemplateTool\trunk\UnityScriptTemplateTool\bin\Debug\UnityScriptTemplateTool.exe.config
+C:\Users\Darran\Documents\Visual Studio 2013\Projects\UnityScriptTemplateTool\trunk\UnityScriptTemplateTool\obj\Debug\UnityScriptTemplateTool.exe
+C:\Users\Darran\Documents\Visual Studio 2013\Projects\UnityScriptTemplateTool\trunk\UnityScriptTemplateTool\obj\Debug\UnityScriptTemplateTool.pdb
+C:\Users\Darran\Documents\Visual Studio 2013\Projects\UnityScriptTemplateTool\trunk\UnityScriptTemplateTool\bin\Debug\UnityScriptTemplateTool.exe
+C:\Users\Darran\Documents\Visual Studio 2013\Projects\UnityScriptTemplateTool\trunk\UnityScriptTemplateTool\bin\Debug\UnityScriptTemplateTool.pdb
+C:\Users\Darran\Documents\Visual Studio 2013\Projects\UnityScriptTemplateTool\trunk\UnityScriptTemplateTool\obj\Debug\UnityScriptTemplateTool.csprojResolveAssemblyReference.cache
+C:\Users\Darran\Documents\Visual Studio 2013\Projects\UnityScriptTemplateTool\trunk\UnityScriptTemplateTool\obj\Debug\Interop.stdole.dll
+C:\Users\Darran\Documents\Visual Studio 2013\Projects\UnityScriptTemplateTool\trunk\UnityScriptTemplateTool\obj\Debug\UnityScriptTemplateTool.csproj.ResolveComReference.cache
+C:\Users\Darran\Documents\Visual Studio 2013\Projects\UnityScriptTemplateTool\trunk\UnityScriptTemplateTool\obj\Debug\UnityScriptTemplateTool.frm_Main.resources
+C:\Users\Darran\Documents\Visual Studio 2013\Projects\UnityScriptTemplateTool\trunk\UnityScriptTemplateTool\obj\Debug\UnityScriptTemplateTool.Properties.Resources.resources
+C:\Users\Darran\Documents\Visual Studio 2013\Projects\UnityScriptTemplateTool\trunk\UnityScriptTemplateTool\obj\Debug\UnityScriptTemplateTool.csproj.GenerateResource.Cache

@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbl_STD = new System.Windows.Forms.Label();
             this.txt_ScriptTemplateDirectory = new System.Windows.Forms.TextBox();
             this.btn_FindScriptTemplateDirectory = new System.Windows.Forms.Button();
             this.lbl_UnityRunning = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_StartUnity = new System.Windows.Forms.Button();
+            this.tmr_RefreshUnityProcess = new System.Windows.Forms.Timer(this.components);
+            this.btn_RestartUnity = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_STD
@@ -74,29 +77,45 @@
             this.lbl_UnityRunning.TabIndex = 3;
             this.lbl_UnityRunning.Text = "Unity Running: False";
             // 
-            // button1
+            // btn_StartUnity
             // 
-            this.button1.Location = new System.Drawing.Point(41, 153);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_StartUnity.Location = new System.Drawing.Point(379, 214);
+            this.btn_StartUnity.Name = "btn_StartUnity";
+            this.btn_StartUnity.Size = new System.Drawing.Size(75, 23);
+            this.btn_StartUnity.TabIndex = 4;
+            this.btn_StartUnity.Text = "Start Unity";
+            this.btn_StartUnity.UseVisualStyleBackColor = true;
+            this.btn_StartUnity.Click += new System.EventHandler(this.btn_StartUnity_Click);
+            // 
+            // tmr_RefreshUnityProcess
+            // 
+            this.tmr_RefreshUnityProcess.Enabled = true;
+            this.tmr_RefreshUnityProcess.Interval = 10;
+            this.tmr_RefreshUnityProcess.Tick += new System.EventHandler(this.tmr_RefreshUnityProcess_Tick);
+            // 
+            // btn_RestartUnity
+            // 
+            this.btn_RestartUnity.Location = new System.Drawing.Point(62, 213);
+            this.btn_RestartUnity.Name = "btn_RestartUnity";
+            this.btn_RestartUnity.Size = new System.Drawing.Size(75, 23);
+            this.btn_RestartUnity.TabIndex = 5;
+            this.btn_RestartUnity.Text = "RestartUnity";
+            this.btn_RestartUnity.UseVisualStyleBackColor = true;
+            this.btn_RestartUnity.Click += new System.EventHandler(this.btn_RestartUnity_Click);
             // 
             // frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(566, 406);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_RestartUnity);
+            this.Controls.Add(this.btn_StartUnity);
             this.Controls.Add(this.lbl_UnityRunning);
             this.Controls.Add(this.btn_FindScriptTemplateDirectory);
             this.Controls.Add(this.txt_ScriptTemplateDirectory);
             this.Controls.Add(this.lbl_STD);
             this.Name = "frm_Main";
             this.Text = "Unity Script Template Tool";
-            this.Activated += new System.EventHandler(this.frm_Main_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -109,7 +128,9 @@
         private System.Windows.Forms.TextBox txt_ScriptTemplateDirectory;
         private System.Windows.Forms.Button btn_FindScriptTemplateDirectory;
         private System.Windows.Forms.Label lbl_UnityRunning;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_StartUnity;
+        private System.Windows.Forms.Timer tmr_RefreshUnityProcess;
+        private System.Windows.Forms.Button btn_RestartUnity;
     }
 }
 
