@@ -1,0 +1,12 @@
+c:\users\darran\documents\visual studio 2013\Projects\UnityScriptTemplateTool\UnityScriptTemplateTool\bin\Debug\UnityScriptTemplateTool.exe.config
+c:\users\darran\documents\visual studio 2013\Projects\UnityScriptTemplateTool\UnityScriptTemplateTool\bin\Debug\UnityScriptTemplateTool.exe
+c:\users\darran\documents\visual studio 2013\Projects\UnityScriptTemplateTool\UnityScriptTemplateTool\bin\Debug\UnityScriptTemplateTool.pdb
+c:\users\darran\documents\visual studio 2013\Projects\UnityScriptTemplateTool\UnityScriptTemplateTool\obj\Debug\UnityScriptTemplateTool.csprojResolveAssemblyReference.cache
+c:\users\darran\documents\visual studio 2013\Projects\UnityScriptTemplateTool\UnityScriptTemplateTool\obj\Debug\UnityScriptTemplateTool.frm_Main.resources
+c:\users\darran\documents\visual studio 2013\Projects\UnityScriptTemplateTool\UnityScriptTemplateTool\obj\Debug\UnityScriptTemplateTool.Properties.Resources.resources
+c:\users\darran\documents\visual studio 2013\Projects\UnityScriptTemplateTool\UnityScriptTemplateTool\obj\Debug\UnityScriptTemplateTool.csproj.GenerateResource.Cache
+c:\users\darran\documents\visual studio 2013\Projects\UnityScriptTemplateTool\UnityScriptTemplateTool\obj\Debug\UnityScriptTemplateTool.exe
+c:\users\darran\documents\visual studio 2013\Projects\UnityScriptTemplateTool\UnityScriptTemplateTool\obj\Debug\UnityScriptTemplateTool.pdb
+C:\Users\Darran\Documents\Visual Studio 2013\Projects\UnityScriptTemplateTool\branches\UnityScriptTemplateTool\bin\Debug\UnityScriptTemplateTool.exe.config
+C:\Users\Darran\Documents\Visual Studio 2013\Projects\UnityScriptTemplateTool\branches\UnityScriptTemplateTool\obj\Debug\UnityScriptTemplateTool.exe
+C:\Users\Darran\Documents\Visual Studio 2013\Projects\UnityScriptTemplateTool\branches\UnityScriptTemplateTool\obj\Debug\UnityScriptTemplateTool.pdb
