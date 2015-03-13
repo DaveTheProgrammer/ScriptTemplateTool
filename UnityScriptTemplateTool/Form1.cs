@@ -5,6 +5,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.IO;
 using System;
+using System.Text.RegularExpressions;
+using System.Net;
 
 
 namespace UnityScriptTemplateTool
@@ -168,5 +170,89 @@ namespace UnityScriptTemplateTool
             startNewUnity();
         }
         #endregion
+
+
+        private string resultText;
+
+        private void btn_GetContent_Click(object sender, EventArgs e)
+        {
+            WebClient w = new WebClient();
+            try
+            {
+                resultText = w.DownloadString(txt_URL.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return;
+            }
+
+
+            txt_Result.Text = resultText;
+        }
+
+        private void btn_Process_Click(object sender, EventArgs e)
+        {
+            List<LinkItem> links = LinkFinder.Find(resultText);
+
+            string lks = string.Empty;
+
+            for (int i = 0; i < links.Count; i++)
+            {
+                lks += links[i].Text + "   -   " + links[i].Href + "\r\n";
+            }
+
+            txt_Result.Text = lks;
+        }
+
+        private LinkItem GetLinkFromName(string LinkName, List<LinkItem> Links)
+        {
+            return Links.Find(l => l.Text.Equals(LinkName));
+        }
+    }
+
+
+
+
+
+    public struct LinkItem
+    {
+        public string Href;
+        public string Text;
+
+        public override string ToString()
+        {
+            return Href + "\n\t" + Text;
+        }
+    }
+
+    static class LinkFinder
+    {
+        public static List<LinkItem> Find(string file)
+        {
+            List<LinkItem> list = new List<LinkItem>();
+
+            // Find all matches in file.
+            MatchCollection m1 = Regex.Matches(file, @"(<a.*?>.*?</a>)", RegexOptions.Singleline);
+
+            // Loop over each match.
+            foreach (Match m in m1)
+            {
+                string value = m.Groups[1].Value;
+                LinkItem i = new LinkItem();
+
+                // Get href attribute.
+                Match m2 = Regex.Match(value, @"href=\""(.*?)\""", RegexOptions.Singleline);
+                if (m2.Success)
+                    i.Href = m2.Groups[1].Value;
+
+                // Remove inner tags from text.
+                string t = Regex.Replace(value, @"\s*<.*?>\s*", "", RegexOptions.Singleline);
+                i.Text = t;
+
+                list.Add(i);
+            }
+            return list;
+        }
     }
 }

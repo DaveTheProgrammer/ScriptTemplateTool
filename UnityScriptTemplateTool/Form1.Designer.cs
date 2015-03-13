@@ -36,6 +36,12 @@
             this.btn_StartUnity = new System.Windows.Forms.Button();
             this.tmr_RefreshUnityProcess = new System.Windows.Forms.Timer(this.components);
             this.btn_RestartUnity = new System.Windows.Forms.Button();
+            this.txt_URL = new System.Windows.Forms.TextBox();
+            this.lbl_URL = new System.Windows.Forms.Label();
+            this.btn_GetContent = new System.Windows.Forms.Button();
+            this.txt_Result = new System.Windows.Forms.RichTextBox();
+            this.lbl_Result = new System.Windows.Forms.Label();
+            this.btn_Process = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_STD
@@ -54,13 +60,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_ScriptTemplateDirectory.Location = new System.Drawing.Point(144, 6);
             this.txt_ScriptTemplateDirectory.Name = "txt_ScriptTemplateDirectory";
-            this.txt_ScriptTemplateDirectory.Size = new System.Drawing.Size(329, 20);
+            this.txt_ScriptTemplateDirectory.Size = new System.Drawing.Size(340, 20);
             this.txt_ScriptTemplateDirectory.TabIndex = 1;
             // 
             // btn_FindScriptTemplateDirectory
             // 
             this.btn_FindScriptTemplateDirectory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_FindScriptTemplateDirectory.Location = new System.Drawing.Point(479, 4);
+            this.btn_FindScriptTemplateDirectory.Location = new System.Drawing.Point(490, 4);
             this.btn_FindScriptTemplateDirectory.Name = "btn_FindScriptTemplateDirectory";
             this.btn_FindScriptTemplateDirectory.Size = new System.Drawing.Size(75, 23);
             this.btn_FindScriptTemplateDirectory.TabIndex = 2;
@@ -79,7 +85,7 @@
             // 
             // btn_StartUnity
             // 
-            this.btn_StartUnity.Location = new System.Drawing.Point(379, 214);
+            this.btn_StartUnity.Location = new System.Drawing.Point(225, 38);
             this.btn_StartUnity.Name = "btn_StartUnity";
             this.btn_StartUnity.Size = new System.Drawing.Size(75, 23);
             this.btn_StartUnity.TabIndex = 4;
@@ -95,7 +101,7 @@
             // 
             // btn_RestartUnity
             // 
-            this.btn_RestartUnity.Location = new System.Drawing.Point(62, 213);
+            this.btn_RestartUnity.Location = new System.Drawing.Point(144, 38);
             this.btn_RestartUnity.Name = "btn_RestartUnity";
             this.btn_RestartUnity.Size = new System.Drawing.Size(75, 23);
             this.btn_RestartUnity.TabIndex = 5;
@@ -103,11 +109,76 @@
             this.btn_RestartUnity.UseVisualStyleBackColor = true;
             this.btn_RestartUnity.Click += new System.EventHandler(this.btn_RestartUnity_Click);
             // 
+            // txt_URL
+            // 
+            this.txt_URL.Location = new System.Drawing.Point(144, 100);
+            this.txt_URL.Name = "txt_URL";
+            this.txt_URL.Size = new System.Drawing.Size(329, 20);
+            this.txt_URL.TabIndex = 6;
+            this.txt_URL.Text = "http://www.dotnetperls.com/scraping-html";
+            // 
+            // lbl_URL
+            // 
+            this.lbl_URL.AutoSize = true;
+            this.lbl_URL.Location = new System.Drawing.Point(12, 103);
+            this.lbl_URL.Name = "lbl_URL";
+            this.lbl_URL.Size = new System.Drawing.Size(32, 13);
+            this.lbl_URL.TabIndex = 7;
+            this.lbl_URL.Text = "URL:";
+            // 
+            // btn_GetContent
+            // 
+            this.btn_GetContent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_GetContent.Location = new System.Drawing.Point(490, 98);
+            this.btn_GetContent.Name = "btn_GetContent";
+            this.btn_GetContent.Size = new System.Drawing.Size(75, 23);
+            this.btn_GetContent.TabIndex = 8;
+            this.btn_GetContent.Text = "&Get";
+            this.btn_GetContent.UseVisualStyleBackColor = true;
+            this.btn_GetContent.Click += new System.EventHandler(this.btn_GetContent_Click);
+            // 
+            // txt_Result
+            // 
+            this.txt_Result.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_Result.Location = new System.Drawing.Point(144, 126);
+            this.txt_Result.Name = "txt_Result";
+            this.txt_Result.Size = new System.Drawing.Size(421, 211);
+            this.txt_Result.TabIndex = 9;
+            this.txt_Result.Text = "\n\n";
+            // 
+            // lbl_Result
+            // 
+            this.lbl_Result.AutoSize = true;
+            this.lbl_Result.Location = new System.Drawing.Point(12, 129);
+            this.lbl_Result.Name = "lbl_Result";
+            this.lbl_Result.Size = new System.Drawing.Size(40, 13);
+            this.lbl_Result.TabIndex = 10;
+            this.lbl_Result.Text = "Result:";
+            // 
+            // btn_Process
+            // 
+            this.btn_Process.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Process.Location = new System.Drawing.Point(490, 343);
+            this.btn_Process.Name = "btn_Process";
+            this.btn_Process.Size = new System.Drawing.Size(75, 23);
+            this.btn_Process.TabIndex = 11;
+            this.btn_Process.Text = "&Process";
+            this.btn_Process.UseVisualStyleBackColor = true;
+            this.btn_Process.Click += new System.EventHandler(this.btn_Process_Click);
+            // 
             // frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(566, 406);
+            this.ClientSize = new System.Drawing.Size(577, 397);
+            this.Controls.Add(this.btn_Process);
+            this.Controls.Add(this.lbl_Result);
+            this.Controls.Add(this.txt_Result);
+            this.Controls.Add(this.btn_GetContent);
+            this.Controls.Add(this.lbl_URL);
+            this.Controls.Add(this.txt_URL);
             this.Controls.Add(this.btn_RestartUnity);
             this.Controls.Add(this.btn_StartUnity);
             this.Controls.Add(this.lbl_UnityRunning);
@@ -131,6 +202,12 @@
         private System.Windows.Forms.Button btn_StartUnity;
         private System.Windows.Forms.Timer tmr_RefreshUnityProcess;
         private System.Windows.Forms.Button btn_RestartUnity;
+        private System.Windows.Forms.TextBox txt_URL;
+        private System.Windows.Forms.Label lbl_URL;
+        private System.Windows.Forms.Button btn_GetContent;
+        private System.Windows.Forms.RichTextBox txt_Result;
+        private System.Windows.Forms.Label lbl_Result;
+        private System.Windows.Forms.Button btn_Process;
     }
 }
 
