@@ -1,12 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System.Text.RegularExpressions;
+using System.Collections.Specialized;
+using System.Collections.Generic;
 using System.Windows.Automation;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.IO;
 using System;
-using System.Text.RegularExpressions;
-using System.Net;
+
+
 
 
 namespace UnityScriptTemplateTool
@@ -15,10 +19,17 @@ namespace UnityScriptTemplateTool
     {
         private const string DefaultUnityApplicationDirectory = @"\Unity\Editor\Unity.exe";
         private const string DefaultTemplateDirectory = @"\Unity\Editor\Data\Resources\ScriptTemplates";
+        private const string TemplateNameFormat = "Template {0} [{1}][{2}]";
         private const string UnityProcessName = "Unity";
+        private const string ValidationFormat = "Logged in as {0}";
+        private const string ProfilePHP = "http://textdump.net/profile/";
+        private const string LoginPHP = "http://textdump.net/parseLogin.php";
+        private const string Username = "Dave";
+        private const string Password = "Dave";
 
         private Process unityProcess;
         private bool unityRunning;
+        private bool loggedIn;
 
 
         #region - Unity Running -
@@ -193,7 +204,7 @@ namespace UnityScriptTemplateTool
 
         private void btn_Process_Click(object sender, EventArgs e)
         {
-            List<LinkItem> links = LinkFinder.Find(resultText);
+            List<LinkItem> links = LinkFinder.Find(txt_Result.Text);
 
             string lks = string.Empty;
 
@@ -209,11 +220,79 @@ namespace UnityScriptTemplateTool
         {
             return Links.Find(l => l.Text.Equals(LinkName));
         }
+
+        private void btn_Login_Click(object sender, EventArgs e)
+        {
+            using (var client = new CookieWebClient())
+            {
+                var loginData = new NameValueCollection
+                {
+                    { "username", "Dave" },
+                    { "password", "Dave" }
+                };
+
+                try
+                {
+                    string loginRequestText = System.Text.Encoding.UTF8.GetString(client.UploadValues(LoginPHP, "POST", loginData));
+
+                    loggedIn = loginRequestText.Contains(string.Format(ValidationFormat, Username));
+
+                    if (loggedIn)
+                    {
+                        //MessageBox.Show("Logged in successfully! :)");
+
+                        string profileResponse = client.UploadString(ProfilePHP, "POST", "");
+                        profileResponse = profileResponse.Replace('\'', '\"');
+                        string[] lines = profileResponse.Split('\n');
+
+
+                        txt_Result.Text = "";
+
+                        for (int i = 0; i < lines.Length; i++)
+                        {
+                            if (lines[i].Contains(string.Format("</a></td><td>{0}</td><td>", Username)))
+                                txt_Result.Text += i + ": " + lines[i] + "\r\n";
+                        }
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error logging in", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 
 
+    public class CookieWebClient : WebClient
+    {
+        public CookieContainer CookieContainer { get; private set; }
 
+        /// <summary>
+        /// This will instanciate an internal CookieContainer.
+        /// </summary>
+        public CookieWebClient()
+        {
+            this.CookieContainer = new CookieContainer();
+        }
 
+        /// <summary>
+        /// Use this if you want to control the CookieContainer outside this class.
+        /// </summary>
+        public CookieWebClient(CookieContainer cookieContainer)
+        {
+            this.CookieContainer = cookieContainer;
+        }
+
+        protected override WebRequest GetWebRequest(Uri address)
+        {
+            var request = base.GetWebRequest(address) as HttpWebRequest;
+            if (request == null) return base.GetWebRequest(address);
+            request.CookieContainer = CookieContainer;
+            return request;
+        }
+    }
 
     public struct LinkItem
     {
@@ -253,6 +332,19 @@ namespace UnityScriptTemplateTool
                 list.Add(i);
             }
             return list;
+        }
+    }
+
+    public static class RichTextBoxExtensions
+    {
+        public static void AppendText(this RichTextBox box, string text, Color color)
+        {
+            box.SelectionStart = box.TextLength;
+            box.SelectionLength = 0;
+
+            box.SelectionColor = color;
+            box.AppendText(text);
+            box.SelectionColor = box.ForeColor;
         }
     }
 }

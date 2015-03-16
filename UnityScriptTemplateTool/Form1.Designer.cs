@@ -42,6 +42,7 @@
             this.txt_Result = new System.Windows.Forms.RichTextBox();
             this.lbl_Result = new System.Windows.Forms.Label();
             this.btn_Process = new System.Windows.Forms.Button();
+            this.btn_Login = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_STD
@@ -60,13 +61,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_ScriptTemplateDirectory.Location = new System.Drawing.Point(144, 6);
             this.txt_ScriptTemplateDirectory.Name = "txt_ScriptTemplateDirectory";
-            this.txt_ScriptTemplateDirectory.Size = new System.Drawing.Size(340, 20);
+            this.txt_ScriptTemplateDirectory.Size = new System.Drawing.Size(629, 20);
             this.txt_ScriptTemplateDirectory.TabIndex = 1;
             // 
             // btn_FindScriptTemplateDirectory
             // 
             this.btn_FindScriptTemplateDirectory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_FindScriptTemplateDirectory.Location = new System.Drawing.Point(490, 4);
+            this.btn_FindScriptTemplateDirectory.Location = new System.Drawing.Point(779, 4);
             this.btn_FindScriptTemplateDirectory.Name = "btn_FindScriptTemplateDirectory";
             this.btn_FindScriptTemplateDirectory.Size = new System.Drawing.Size(75, 23);
             this.btn_FindScriptTemplateDirectory.TabIndex = 2;
@@ -129,7 +130,7 @@
             // btn_GetContent
             // 
             this.btn_GetContent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_GetContent.Location = new System.Drawing.Point(490, 98);
+            this.btn_GetContent.Location = new System.Drawing.Point(779, 98);
             this.btn_GetContent.Name = "btn_GetContent";
             this.btn_GetContent.Size = new System.Drawing.Size(75, 23);
             this.btn_GetContent.TabIndex = 8;
@@ -142,9 +143,12 @@
             this.txt_Result.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_Result.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.txt_Result.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Result.ForeColor = System.Drawing.Color.Gainsboro;
             this.txt_Result.Location = new System.Drawing.Point(144, 126);
             this.txt_Result.Name = "txt_Result";
-            this.txt_Result.Size = new System.Drawing.Size(421, 211);
+            this.txt_Result.Size = new System.Drawing.Size(710, 344);
             this.txt_Result.TabIndex = 9;
             this.txt_Result.Text = "\n\n";
             // 
@@ -160,7 +164,7 @@
             // btn_Process
             // 
             this.btn_Process.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Process.Location = new System.Drawing.Point(490, 343);
+            this.btn_Process.Location = new System.Drawing.Point(779, 476);
             this.btn_Process.Name = "btn_Process";
             this.btn_Process.Size = new System.Drawing.Size(75, 23);
             this.btn_Process.TabIndex = 11;
@@ -168,11 +172,23 @@
             this.btn_Process.UseVisualStyleBackColor = true;
             this.btn_Process.Click += new System.EventHandler(this.btn_Process_Click);
             // 
+            // btn_Login
+            // 
+            this.btn_Login.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_Login.Location = new System.Drawing.Point(12, 476);
+            this.btn_Login.Name = "btn_Login";
+            this.btn_Login.Size = new System.Drawing.Size(75, 23);
+            this.btn_Login.TabIndex = 12;
+            this.btn_Login.Text = "&Login";
+            this.btn_Login.UseVisualStyleBackColor = true;
+            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
+            // 
             // frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(577, 397);
+            this.ClientSize = new System.Drawing.Size(866, 511);
+            this.Controls.Add(this.btn_Login);
             this.Controls.Add(this.btn_Process);
             this.Controls.Add(this.lbl_Result);
             this.Controls.Add(this.txt_Result);
@@ -208,6 +224,7 @@
         private System.Windows.Forms.RichTextBox txt_Result;
         private System.Windows.Forms.Label lbl_Result;
         private System.Windows.Forms.Button btn_Process;
+        private System.Windows.Forms.Button btn_Login;
     }
 }
 
